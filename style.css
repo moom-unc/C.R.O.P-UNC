@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    --LOGO-Yellow: #ffba3e;
+    --LOGO-Green: #196b00;
+    --LOGO-Brown: #7a6200;
+    --text-color: #473900;
+    --background-color: #196b00;
+    --color-2: #e0d9b9;
+    --color-3: #ffba3e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 1em;
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merienda', 'Playfair Display', serif;
+    color: var(--text-color);
+    margin-bottom: 0.5em;
+}
+
+h1 { 
+    font-size: 2.75rem; 
+}
+
+h2 { 
+    font-size: 2rem; 
+    border-bottom: 2px solid var(--LOGO-Yellow); 
+    padding-bottom: 0.25em; 
+    margin-top: 0.5em; 
+}
+
+h3 { 
+    font-size: 1.4rem; 
+    margin-top: 1em; 
+}
+
+h4, h5, h6 { 
+    font-size: 1.2rem; 
+    margin-top: 0.75em; 
+}
+
+/* Navigation Bar */
+nav {
+    margin: 0 auto 2em auto;
+    width: min(1000px, 100%);
+    background-color: var(--color-2);
+    padding: 1em 1.5em;
+    border-radius: 0.75em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    gap: 1.5em;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    font-family: 'Merienda', serif;
+    font-weight: bold;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+nav a:hover {
+    color: var(--LOGO-Green);
+    text-decoration: underline wavy var(--LOGO-Yellow);
+}
+
+/* Structural Cards */
+header, section { 
+    margin: 2em auto;
+    width: min(75em, 100%);
+    background-color: var(--color-2);
+    padding: min(2.5em, 8%);
+    border-radius: 1em;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Flexbox Containers */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2.5em;
+}
+
+.text-container {
+    flex: 1 1 30em;
+}
+
+.text-container p {
+    font-size: 1.15rem;
+    margin: 0.75em 0 1em 0;
+}
+
+.text-container ul {
+    margin: 0.5em 0 1.25em 1.5em;
+}
+
+.text-container li {
+    margin-bottom: 0.5em;
+    font-size: 1.05rem;
+}
+
+/* Images & Media */
+header img, section img {
+    max-width: 100%;
+    height: auto;  
+    border-radius: 1em;
+    object-fit: cover;
+    box-shadow: 0px 4px 12px rgba(71, 57, 0, 0.3);
+}
+
+/* About Us Photo Gallery */
+.photo-gallery {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 1.5em 0;
+}
+
+.photo-gallery img {
+    flex: 1 1 180px;
+    max-width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.75em;
+}
+
+/* 3 Pillars Specialty Boxes */
+.pillar-box {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1.25em;
+    border-left: 5px solid var(--LOGO-Green);
+    border-radius: 0.5em;
+    margin: 1em 0;
+}
+
+.pillar-box h3 {
+    margin-top: 0;
+    color: var(--LOGO-Green);
+}
+
+/* Call-to-Action Buttons */
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: var(--color-3);
+    padding: 0.75em 1.5em;
+    font-weight: 700;
+    border-radius: 0.5em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--LOGO-Yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 0.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75em;
+    }
+
+    nav li:first-child {
+        margin-right: 0;
+        margin-bottom: 0.5em;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .photo-gallery img {
+        height: auto;
+    }
+}
